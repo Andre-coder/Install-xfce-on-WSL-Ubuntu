@@ -65,8 +65,13 @@ echo xfce4-session > ~/.xsession
 ```
 ## Step 5: Edit XRDP Startup Script
 ```bash
-Step 5: Edit XRDP Startup Script
+sudo nano /etc/xrdp/startwm.sh
 ```
+
+Add this line <br>
+
+startxfce4
+
 ## Step 6: Enable and Start dbus & XRDP
 ```bash
 sudo systemctl enable dbus
