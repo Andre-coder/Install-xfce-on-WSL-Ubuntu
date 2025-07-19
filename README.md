@@ -1,30 +1,71 @@
-# Install-xfce-on-WSL-Ubuntu
+# Install XFCE Desktop Environment on WSL Ubuntu with XRDP
 
-**Download update and upgrade systems
+This guide helps you set up the lightweight **XFCE desktop environment** and enables remote desktop access via **XRDP** on your WSL (Windows Subsystem for Linux) Ubuntu installation.
+
+---
+
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Step 1: Update & Upgrade Your System](#step-1-update--upgrade-your-system)
+- [Step 2: Install XFCE and XRDP](#step-2-install-xfce-and-xrdp)
+- [Step 3: Configure XRDP](#step-3-configure-xrdp)
+- [Step 4: Set XFCE as Default Session](#step-4-set-xfce-as-default-session)
+- [Step 5: Edit XRDP Startup Script](#step-5-edit-xrdp-startup-script)
+- [Step 6: Enable and Start dbus & XRDP](#step-6-enable-and-start-dbus--xrdp)
+- [Step 7: Check XRDP Status](#step-7-check-xrdp-status)
+- [Connect to Your WSL Desktop](#connect-to-your-wsl-desktop)
+- [Troubleshooting](#troubleshooting)
+
+---
+
+## Prerequisites
+
+- Windows 10/11 with [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install) installed
+- Ubuntu installed on WSL
+
+---
+
+## Step 1: Update & Upgrade Your System
+
+```bash
 sudo apt update && sudo apt -y upgrade
+```
 
-# install xfce 
+## Step 2: Install XFCE and XRDP
+```bash
+sudo apt-get install -y xfce4 xfce4-goodiese
+```
+## Step 3: Configure XRDP
 
-sudo apt-get install -y xfce4 xfce4-goodies
-
+```bash
 sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
+```
+```bash
 sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
+```
+```bash
 sudo sed -i 's/max_bpp=32/#max_bpp=32\nmax_bpp=128/g' /etc/xrdp/xrdp.ini
+```
+```bash
 sudo sed -i 's/xserverbpp=24/#xserverbpp=24\nxserverbpp=128/g' /etc/xrdp/xrdp.ini
+```
 
-**Call Sessions
+## Step 4: Set XFCE as Default Session
+```bash
 echo xfce4-session > ~/.xsession
-
-**For configurations
-sudo nano /etc/xrdp/startwm.sh 
-
-1 step add: "startxfce4"
-And save
-
-#enable dbus
+```
+## Step 5: Edit XRDP Startup Script
+```bash
+Step 5: Edit XRDP Startup Script
+```
+## Step 6: Enable and Start dbus & XRDP
+```bash
 sudo systemctl enable dbus
 sudo /etc/init.d/dbus start
 sudo /etc/init.d/xrdp start
-
-# check xrdp status and start it
+```
+## Step 7: Check XRDP Status
+```bash
 sudo /etc/init.d/xrdp status
+```
