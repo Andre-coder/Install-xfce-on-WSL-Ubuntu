@@ -36,6 +36,9 @@ sudo apt update && sudo apt -y upgrade
 ```bash
 sudo apt install xfce4 xfce4-goodies
 ```
+```bash
+sudo apt-get install -y xrdp
+```
 >If "E: Unable to locate package xfce4-goodiese" <br>
 >Run <br>
 >sudo add-apt-repository main <br>
