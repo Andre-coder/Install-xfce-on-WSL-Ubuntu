@@ -34,7 +34,7 @@ sudo apt update && sudo apt -y upgrade
 
 ## Step 2: Install XFCE and XRDP
 ```bash
-sudo apt-get install -y xfce4
+sudo apt-get install -y xfce4 xfce4-goodiese
 ```
 >If "E: Unable to locate package xfce4-goodiese" <br>
 >Run <br>
