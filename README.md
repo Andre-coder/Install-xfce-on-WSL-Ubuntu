@@ -36,13 +36,13 @@ sudo apt update && sudo apt -y upgrade
 ```bash
 sudo apt-get install -y xfce4
 ```
->If "E: Unable to locate package xfce4-goodiese"
->Run
->sudo add-apt-repository main
->sudo add-apt-repository universe
->sudo add-apt-repository restricted
->sudo add-apt-repository multiverse
->sudo apt update
+>If "E: Unable to locate package xfce4-goodiese".
+>Run:
+>sudo add-apt-repository main.
+>sudo add-apt-repository universe.
+>sudo add-apt-repository restricted.
+>sudo add-apt-repository multiverse.
+>sudo apt update.
 
 ## Step 3: Configure XRDP
 
